@@ -1,4 +1,11 @@
 export default {
+  alias: {
+    '~~': `<rootDir>`,
+    '@@': `<rootDir>`,
+    '~': `<srcDir>`,
+    '@': `<srcDir>`,
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'smooth-shop',
@@ -14,6 +21,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/styles/_global.scss',
+    '~/styles/_variables.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -34,8 +43,13 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/style-resources'
   ],
+
+  styleResources: {
+    scss: ['./styles/_variables.scss']
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},

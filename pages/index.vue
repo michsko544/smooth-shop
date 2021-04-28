@@ -1,77 +1,30 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        smooth-shop
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+  <HeroProduct 
+    slogan="BLENDED SMOOTHIES"
+    title="Make the Most of Morning"
+    description="The quickest, easiest way to get in your fruits and veggies"
+    button1Text="Learn More"
+    button2Text="Shop Now"
+    :image="image" />
 </template>
 
 <script lang="ts">
+import HeroProduct from "../components/Home/HeroProduct"
+import image from "../assets/heroproduct.jpg";
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  components: {
+    HeroProduct
+  },
+  data() {
+    return {
+      image
+    }
+  }
+})
 </script>
 
 <style lang="scss">
-$color: red;
 
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: $color;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
