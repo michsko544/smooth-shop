@@ -1,9 +1,9 @@
 export default {
   alias: {
-    '~~': `<rootDir>`,
-    '@@': `<rootDir>`,
-    '~': `<srcDir>`,
-    '@': `<srcDir>`,
+    '~~': '<rootDir>',
+    '@@': '<rootDir>',
+    '~': '<srcDir>',
+    '@': '<srcDir>'
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -15,7 +15,15 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&family=Work+Sans&display=swap'
+      }
     ]
   },
 
@@ -44,7 +52,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    'nuxt-svg-loader'
   ],
 
   styleResources: {

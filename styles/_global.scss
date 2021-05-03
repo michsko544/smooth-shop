@@ -7,11 +7,14 @@
 
 body {
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-a {
+a,
+a:active,
+a:hover {
   text-decoration: none;
+  color: $black;
 }
 
 ul {
@@ -21,6 +24,11 @@ ul {
 .contentContainer {
   max-width: 1200px;
   margin: 0 auto;
+}
+@media (max-width: $mobile) {
+  .contentContainer {
+    padding: 24px;
+  }
 }
 
 @media (min-width: $mobile) {

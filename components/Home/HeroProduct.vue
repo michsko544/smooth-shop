@@ -1,41 +1,72 @@
 <template>
   <div class="container">
-      <img :src="image" alt="smoothie">
-      <div class="text">
-            <p>{{slogan}}</p>
-            <h1>{{title}}</h1>
-            <p class="description">{{description}}</p>
-            <div>
-                <button @click="button1Handler">{{button1Text}}</button>
-                <button @click="button2Handler">{{button2Text}}</button>
-            </div>
+    <img :src="image" alt="smoothie">
+    <div class="text contentContainer">
+      <p>{{ slogan }}</p>
+      <h1>{{ title }}</h1>
+      <p class="description">
+        {{ description }}
+      </p>
+      <div class="buttons">
+        <button class="btn black-btn" @click="button1Handler">
+          {{ button1Text }}
+        </button>
+        <button class="btn black-btn" @click="button2Handler">
+          {{ button2Text }}
+        </button>
       </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-    import Vue from 'vue'
+import Vue from 'vue'
 
-    export default Vue.extend({
-        name: "HeroProduct",
-        props: {
-            title: String,
-            slogan: String,
-            description: String,
-            button1Text: String,
-            button2Text: String,
-            button1Handler: ()=>{},
-            button2Handler: ()=>{},
-            image: Image
-        },
-        
+export default Vue.extend({
+  name: 'HeroProduct',
+  props: {
+    title: {
+      type: String,
+      default: 'Default title',
+      required: true
+    },
+    slogan: {
+      type: String,
+      default: ''
+    },
+    description: {
+      type: String,
+      default: ''
+    },
+    button1Text: {
+      type: String,
+      default: 'Learn More'
+    },
+    button2Text: {
+      type: String,
+      default: 'Shop Now'
+    },
+    button1Handler: {
+      type: Function,
+      default: () => {}
+    },
+    button2Handler: {
+      type: Function,
+      default: () => {}
+    },
+    image: {
+      type: String,
+      default: 'https://images.unsplash.com/photo-1551040096-5f4aec6ca12b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+    }
+  }
 
-    })
+})
 </script>
 
 <style lang="scss" scoped>
     .container{
         width: 100%;
+        position: relative;
     }
 
     img{
@@ -43,5 +74,49 @@
         height: calc(100vh - #{$header-height});
         object-fit: cover;
         object-position: center;
+    }
+
+    .text{
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, 50%);
+
+      p{
+        margin-bottom: 4px;
+      }
+
+      &>*{
+        color: $white;
+      }
+
+      .buttons{
+        display: flex;
+        flex-direction: column;
+        margin: 24px 0;
+
+        &>*{
+          margin-bottom: 12px;
+        }
+      }
+    }
+
+    @media(min-width: $mobile){
+      .text{
+        bottom: 80px;
+        transform: translate(-50%, 0);
+
+        .buttons{
+          display: flex;
+          width: fit-content;
+          flex-direction: row;
+
+          &>*{
+            margin-right: 12px;
+            margin-bottom: 0;
+          }
+        }
+      }
     }
 </style>

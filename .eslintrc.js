@@ -8,8 +8,10 @@ module.exports = {
     '@nuxtjs/eslint-config-typescript',
     'plugin:nuxt/recommended'
   ],
-  plugins: [
-  ],
-  // add your custom rules here
-  rules: {}
+  rules: {
+    quotes: ['error', 'single'],
+    'no-console': 'warn',
+    'no-unused-vars': 'off',
+    'no-empty': 'warn'
+  }
 }
