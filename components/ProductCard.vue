@@ -1,0 +1,97 @@
+<template>
+  <NuxtLink :to="routes.SHOP_URL + '/' + id ">
+    <div
+      :style="{
+        backgroundImage: `url(${image})`,
+      }"
+      class="container"
+    >
+      <div class="text">
+        <h3>{{ title }}</h3>
+        <div class="price">
+          <span :class="{sale: salePrice}">
+            {{ price }} EUR
+          </span>
+          <span v-if="salePrice">{{ salePrice }} EUR</span>
+        </div>
+      </div>
+    </div>
+  </NuxtLink>
+</template>
+<script lang="ts">
+import Vue from 'vue'
+import routes from '../constants/routes'
+export default Vue.extend({
+  name: 'ProductCard',
+  props: {
+    title: {
+      type: String,
+      default: 'Default title',
+      required: true
+    },
+    price: {
+      type: String,
+      default: '10',
+      required: true
+    },
+    id: {
+      type: String,
+      default: '1',
+      required: true
+    },
+    salePrice: {
+      type: String,
+      default: '',
+      required: false
+    },
+    image: {
+      type: String,
+      default: 'https://images.pexels.com/photos/1055271/pexels-photo-1055271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      required: true
+    }
+  },
+  data () {
+    return {
+      routes
+    }
+  }
+})
+</script>
+<style lang="scss" scoped>
+  .container{
+    height: 100%;
+    display: flex;
+    margin: 4px;
+
+    background-size: cover;
+    background-position: center;
+
+    &:hover{
+      opacity: 0.6;
+      background-color: green;
+    }
+
+    .text{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      align-self: flex-end;
+      margin: 24px auto;
+
+      h3{
+        font-weight: 300;
+        margin-bottom: 12px;
+      }
+
+      .price{
+        &>*{
+          margin: 0 4px;
+        }
+        .sale{
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+</style>

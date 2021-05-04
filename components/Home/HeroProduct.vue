@@ -8,7 +8,7 @@
         {{ description }}
       </p>
       <div class="buttons">
-        <button class="btn black-btn" @click="button1Handler">
+        <button class="btn white-btn" @click="button1Handler">
           {{ button1Text }}
         </button>
         <button class="btn black-btn" @click="button2Handler">
@@ -56,7 +56,7 @@ export default Vue.extend({
     },
     image: {
       type: String,
-      default: 'https://images.unsplash.com/photo-1551040096-5f4aec6ca12b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+      default: 'https://images.unsplash.com/photo-1616031036658-1f2d8258eca8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1342&q=80'
     }
   }
 
@@ -71,9 +71,10 @@ export default Vue.extend({
 
     img{
         width:100%;
-        height: calc(100vh - #{$header-height});
+        height: calc(100vh - #{$header-height} - 120px);
         object-fit: cover;
         object-position: center;
+        filter: brightness(75%);
     }
 
     .text{
@@ -93,8 +94,8 @@ export default Vue.extend({
 
       .buttons{
         display: flex;
-        flex-direction: column;
         margin: 24px 0;
+        gap: 24px;
 
         &>*{
           margin-bottom: 12px;

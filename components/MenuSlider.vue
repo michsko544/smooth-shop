@@ -7,13 +7,25 @@
       <nav>
         <ul>
           <li @click="toggleMenu">
-            <NuxtLink to="/">
+            <NuxtLink :to="routes.HOME_URL">
               Home
             </NuxtLink>
           </li>
-          <li @click="toggleMenu">Shop</li>
-          <li @click="toggleMenu">About</li>
-          <li @click="toggleMenu">Blog</li>
+          <li @click="toggleMenu">
+            <NuxtLink :to="routes.SHOP_URL">
+              Shop
+            </NuxtLink>
+          </li>
+          <li @click="toggleMenu">
+            <NuxtLink :to="routes.ABOUT_URL">
+              About
+            </NuxtLink>
+          </li>
+          <li @click="toggleMenu">
+            <NuxtLink :to="routes.BLOG_URL">
+              Blog
+            </NuxtLink>
+          </li>
         </ul>
       </nav>
     </div>
@@ -22,11 +34,17 @@
 <script lang="ts">
 import Vue from 'vue'
 import XIcon from '../assets/x.svg'
+import routes from '../constants/routes'
 
 export default Vue.extend({
   name: 'MenuSlider',
   components: {
     XIcon
+  },
+  data () {
+    return {
+      routes
+    }
   },
   methods: {
     toggleMenu () {

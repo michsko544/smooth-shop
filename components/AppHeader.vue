@@ -8,13 +8,25 @@
           </button>
           <ul class="only-desktop">
             <li>
-              <NuxtLink to="/">
+              <NuxtLink :to="routes.HOME_URL">
                 Home
               </NuxtLink>
             </li>
-            <li>Shop</li>
-            <li>About</li>
-            <li>Blog</li>
+            <li>
+              <NuxtLink :to="routes.SHOP_URL">
+                Shop
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="routes.ABOUT_URL">
+                About
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="routes.BLOG_URL">
+                Blog
+              </NuxtLink>
+            </li>
           </ul>
         </div>
         <div class="logo">
@@ -38,12 +50,18 @@ import Vue from 'vue'
 import CartIcon from '../assets/cart.svg'
 import UserIcon from '../assets/user.svg'
 import BurgerIcon from '../assets/burger.svg'
+import routes from '../constants/routes'
 export default Vue.extend({
   name: 'AppHeader',
   components: {
     CartIcon,
     UserIcon,
     BurgerIcon
+  },
+  data () {
+    return {
+      routes
+    }
   },
   methods: {
     toggleMenu () {
@@ -118,7 +136,6 @@ export default Vue.extend({
         align-items: center;
         position: relative;
         height: 100%;
-        padding: 0 24px;
     }
 
 </style>
