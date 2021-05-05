@@ -6,6 +6,10 @@
       }"
       class="container"
     >
+      <div class="statusIcons">
+        <SaleIcon v-if="salePrice" class="productStatus" />
+        <SoldIcon v-if="quantity===0" class="productStatus" />
+      </div>
       <div class="text">
         <h3>{{ title }}</h3>
         <div class="price">
@@ -21,8 +25,14 @@
 <script lang="ts">
 import Vue from 'vue'
 import routes from '../constants/routes'
+import SaleIcon from '../assets/sale.svg'
+import SoldIcon from '../assets/sold-out.svg'
 export default Vue.extend({
   name: 'ProductCard',
+  components: {
+    SaleIcon,
+    SoldIcon
+  },
   props: {
     title: {
       type: String,
@@ -32,6 +42,11 @@ export default Vue.extend({
     price: {
       type: String,
       default: '10',
+      required: true
+    },
+    quantity: {
+      type: Number,
+      default: 1,
       required: true
     },
     id: {
@@ -62,13 +77,22 @@ export default Vue.extend({
     height: 100%;
     display: flex;
     margin: 4px;
+    position:relative;
 
     background-size: cover;
     background-position: center;
 
     &:hover{
       opacity: 0.6;
-      background-color: green;
+    }
+
+    .statusIcons{
+      position: absolute;
+      .productStatus{
+        width: 52px;
+        height: 52px;
+        color: $black;
+      }
     }
 
     .text{

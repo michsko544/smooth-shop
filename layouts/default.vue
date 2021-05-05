@@ -3,6 +3,7 @@
     <MenuSlider />
     <AppHeader />
     <Nuxt />
+    <AppFooter />
   </div>
 </template>
 <script lang="ts">
@@ -44,6 +45,11 @@ export default Vue.extend({
     margin-bottom: 16px;
   }
 
+  h2{
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
   .icon{
     width: 22px;
     background: none;
@@ -71,6 +77,10 @@ export default Vue.extend({
       font-family: 'Rubik', sans-serif;
       font-size: 48px;
       font-weight: normal;
+    }
+
+    p{
+      font-size: 16px;
     }
   }
 </style>

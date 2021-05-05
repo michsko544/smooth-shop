@@ -71,7 +71,7 @@ export default Vue.extend({
 
     img{
         width:100%;
-        height: calc(100vh - #{$header-height} - 120px);
+        height: calc(100vh - #{$header-height} - 64px);
         object-fit: cover;
         object-position: center;
         filter: brightness(75%);
@@ -104,6 +104,10 @@ export default Vue.extend({
     }
 
     @media(min-width: $mobile){
+      img{
+        height: calc(100vh - #{$header-height} - 100px);
+      }
+
       .text{
         bottom: 80px;
         transform: translate(-50%, 0);

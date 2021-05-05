@@ -1,7 +1,7 @@
 <template>
   <div :class="{container: true, active: $store.state.ui.isMenuOpen}">
     <div class="menu-slider-inner">
-      <button @click="toggleMenu" class="icon">
+      <button class="icon" @click="toggleMenu">
         <XIcon />
       </button>
       <nav>
@@ -43,7 +43,8 @@ export default Vue.extend({
   },
   data () {
     return {
-      routes
+      routes,
+      isOpen: this.$store.state.ui.isMenuOpen
     }
   },
   methods: {
@@ -57,7 +58,7 @@ export default Vue.extend({
   .container{
     width: 0%;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background: $white;

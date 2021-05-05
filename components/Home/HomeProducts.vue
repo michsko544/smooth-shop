@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <div class="products-container">
-      <ProductCard title="Raspberry Brownie" :sale-price="5" image="https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?cs=srgb&dl=pexels-vojtech-okenka-1055272.jpg&fm=jpg" />
-      <ProductCard title="Fruit Happiness" image="https://images.pexels.com/photos/1055270/pexels-photo-1055270.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-      <ProductCard />
+      <ProductCard title="Raspberry Brownie" :quantity="0" :sale-price="5" image="https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?cs=srgb&dl=pexels-vojtech-okenka-1055272.jpg&fm=jpg" />
+      <ProductCard title="Fruit Happiness" :sale-price="8" image="https://images.pexels.com/photos/1055270/pexels-photo-1055270.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+      <ProductCard :quantity="0" />
       <ProductCard />
     </div>
     <button class="btn white-btn" @click="redirectToShop">
@@ -13,7 +13,7 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import routes from '../../constants/routes'
+import { SHOP_URL } from '../../constants/routes'
 import ProductCard from '../ProductCard.vue'
 export default Vue.extend({
   name: 'HomeProducts',
@@ -22,12 +22,12 @@ export default Vue.extend({
   },
   data () {
     return {
-      routes
+      SHOP_URL
     }
   },
   methods: {
     redirectToShop () {
-      this.$router.push(routes.SHOP_URL)
+      this.$router.push(SHOP_URL)
     }
   }
 })
@@ -46,6 +46,7 @@ export default Vue.extend({
     overflow-x: scroll;
     overflow-y: hidden;
     display:flex;
+    padding: 0 4px;
 
     &>* {
       width: 25vw;
@@ -58,6 +59,10 @@ export default Vue.extend({
   @media(min-width: $mobile){
     .products-container{
       overflow: hidden;
+
+      &>* {
+      width: 25%;
+    }
     }
   }
 </style>
