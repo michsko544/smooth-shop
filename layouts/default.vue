@@ -50,6 +50,12 @@ export default Vue.extend({
     margin-bottom: 12px;
   }
 
+  .slogan{
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+
   .icon{
     width: 22px;
     background: none;

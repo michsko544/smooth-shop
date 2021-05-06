@@ -31,6 +31,7 @@ export default Vue.extend({
 
   .container{
     width: 100%;
+    margin: 64px auto;
 
     h2{
       font-size: 28px;
@@ -47,7 +48,7 @@ export default Vue.extend({
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 64px auto;
+    margin: 100px auto;
 
     h2, p{
       width: 100%;

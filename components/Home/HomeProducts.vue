@@ -36,7 +36,7 @@ export default Vue.extend({
   .container {
 
     button{
-      border: 1px solid $black;
+      border: 2px solid $black;
       max-width: 250px;
       margin: 24px auto;
     }
@@ -61,8 +61,8 @@ export default Vue.extend({
       overflow: hidden;
 
       &>* {
-      width: 25%;
-    }
+        width: 25%;
+      }
     }
   }
 </style>

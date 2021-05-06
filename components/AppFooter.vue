@@ -107,7 +107,7 @@ export default Vue.extend({
   }
 
   .footer-bottom{
-    background: #fafcff;
+    background: $gray-light;
 
     .footer-bottom-inner{
       padding-top: 24px;

@@ -2,7 +2,9 @@
   <div class="container">
     <img :src="image" alt="smoothie">
     <div class="text contentContainer">
-      <p>{{ slogan }}</p>
+      <p class="slogan">
+        {{ slogan }}
+      </p>
       <h1>{{ title }}</h1>
       <p class="description">
         {{ description }}
@@ -65,13 +67,14 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
     .container{
-        width: 100%;
-        position: relative;
+      padding: 0 8px;
+      width: 100%;
+      position: relative;
     }
 
     img{
         width:100%;
-        height: calc(100vh - #{$header-height} - 64px);
+        height: calc(100vh - #{$header-height} - 30px - 64px);
         object-fit: cover;
         object-position: center;
         filter: brightness(75%);
