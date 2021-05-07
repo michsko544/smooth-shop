@@ -34,6 +34,7 @@ export default Vue.extend({
     cursor: pointer;
     font-family: "Work Sans", sans-serif;
     font-size: 15px;
+    transition: 0.2s all ease-in;
   }
 
   button.btn:hover{

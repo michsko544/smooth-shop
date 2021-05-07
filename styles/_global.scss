@@ -26,6 +26,17 @@ ul {
   margin: 0 auto;
   padding: 0 24px;
 }
+
+// page transitions
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s ease;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
 @media (max-width: $mobile) {
   .contentContainer {
     padding: 24px;

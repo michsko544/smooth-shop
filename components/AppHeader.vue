@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header @click="dropdownOpen=false">
     <div :class="{banner: true, hide: scrollPosition !== 0}">
       Free shipping for all orders +20 EUR
     </div>
@@ -34,7 +34,9 @@
           </ul>
         </div>
         <div class="logo">
-          Logo
+          <NuxtLink :to="routes.HOME_URL">
+            <img :src="logo" alt="logotype">
+          </NuxtLink>
         </div>
         <div class="buttons-wrapper">
           <button class="icon">
@@ -221,6 +223,7 @@ import UserIcon from '../assets/user.svg'
 import BurgerIcon from '../assets/burger.svg'
 import ArrowIcon from '../assets/dropdown-arrow.svg'
 import routes from '../constants/routes'
+import Logo from '../assets/logo.png'
 export default Vue.extend({
   name: 'AppHeader',
   components: {
@@ -233,7 +236,8 @@ export default Vue.extend({
     return {
       routes,
       scrollPosition: 0,
-      dropdownOpen: true
+      dropdownOpen: false,
+      logo: Logo
     }
   },
   mounted () {
@@ -324,7 +328,18 @@ export default Vue.extend({
             position: absolute;
             left: 50%;
             top: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%) ;
+            height: 100%;
+
+            img{
+              height: 100%;
+              object-fit: contain;
+              transform: scale(1.5);
+            }
+
+            a::after{
+              border:none;
+            }
         }
 
         .buttons-wrapper{

@@ -2,7 +2,9 @@
   <footer>
     <Newsletter />
     <div class="links-container contentContainer">
-      <div>Logo</div>
+      <div>
+        <img :src="logo" alt="logotype">
+      </div>
       <div>
         <h3>Helpful Links</h3>
         <ul>
@@ -74,6 +76,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import routes from '../constants/routes'
+import Logo from '../assets/logo.png'
 import Newsletter from './Newsletter.vue'
 export default Vue.extend({
   name: 'AppFooter',
@@ -82,7 +85,8 @@ export default Vue.extend({
   },
   data () {
     return {
-      routes
+      routes,
+      logo: Logo
     }
   }
 })
@@ -103,6 +107,13 @@ export default Vue.extend({
   .links-container{
     &>div{
       margin: 32px auto;
+    }
+
+    img{
+      width: 150px;
+      height: 80px;
+      object-position: -50px -50px;
+      object-fit: cover;
     }
   }
 

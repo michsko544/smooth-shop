@@ -75,6 +75,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
   .container{
     height: 100%;
+    min-height: 480px;
     display: flex;
     margin: 4px;
     position:relative;
