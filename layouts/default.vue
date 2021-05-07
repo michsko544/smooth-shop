@@ -8,9 +8,15 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
-
+import MenuSlider from '../components/MenuSlider.vue'
+import AppHeader from '../components/AppHeader.vue'
+import AppFooter from '../components/AppFooter.vue'
 export default Vue.extend({
-
+  components: {
+    MenuSlider,
+    AppHeader,
+    AppFooter
+  }
 })
 </script>
 

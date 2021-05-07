@@ -30,6 +30,7 @@ import Collections from '../components/Home/Collections.vue'
 import RichText from '../components/Home/RichText.vue'
 import Opinions from '../components/Home/Opinions.vue'
 import HomeContent from '../components/Home/HomeContent.vue'
+import Cta from '../components/Cta.vue'
 
 export default Vue.extend({
   components: {
@@ -38,7 +39,8 @@ export default Vue.extend({
     Collections,
     RichText,
     Opinions,
-    HomeContent
+    HomeContent,
+    Cta
   }
 })
 </script>

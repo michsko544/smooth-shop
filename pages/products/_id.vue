@@ -5,8 +5,12 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
+import Breadcrumbs from '../../components/Breadcrumbs.vue'
 import routes from '../../constants/routes'
 export default Vue.extend({
+  components: {
+    Breadcrumbs
+  },
   data () {
     return {
       routes,
