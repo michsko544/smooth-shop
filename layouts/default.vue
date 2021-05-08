@@ -65,6 +65,7 @@ export default Vue.extend({
 
   .icon{
     width: 22px;
+    height: auto;
     background: none;
     border: none;
     color: $gray;

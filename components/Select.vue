@@ -35,12 +35,18 @@ export default Vue.extend({
 <style lang="scss" scoped>
   select {
     width: 100%;
-    max-width: 250px;
     height: 45px;
     border: 2px solid $black;
     outline: none;
     padding: 10px 14px;
     font-size: 14px;
-    font-family: "Work Sans"
+    font-family: "Work Sans";
+    background-color: $white;
+  }
+
+  @media(min-width: $mobile){
+    select{
+      max-width: 250px;
+    }
   }
 </style>

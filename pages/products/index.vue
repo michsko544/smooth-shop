@@ -9,6 +9,7 @@
           <Select :options="sortOptions" :selected-value="filters.sort" :handle-change="({target})=>changeSort(target.value)" name="sort" />
         </label>
       </div>
+      <Filters :filters="[{title: 'Fruits', options: ['raspberries', 'bananas', 'apples']}, {title: 'Collections', options: ['Mini cakes', 'Cakes', 'Muffins', 'Donuts']}, {title: 'Other', options: ['Vege', 'Spicy', 'Extremely Sweet']}]" />
       <ProductsGrid />
     </div>
   </section>
@@ -17,6 +18,7 @@
 import Vue from 'vue'
 import routes from '../../constants/routes'
 import ProductsGrid from '../../components/Products/ProductsGrid.vue'
+import Filters from '../../components/Products/Filters.vue'
 import PageTitle from '../../components/PageTitle.vue'
 import Breadcrumbs from '../../components/Breadcrumbs.vue'
 import Select from '../../components/Select.vue'
@@ -25,7 +27,8 @@ export default Vue.extend({
     ProductsGrid,
     PageTitle,
     Breadcrumbs,
-    Select
+    Select,
+    Filters
   },
   data () {
     return {
@@ -68,8 +71,12 @@ export default Vue.extend({
       display: flex;
       align-items: center;
       white-space: nowrap;
-      width: 320px;
+      flex-wrap: wrap;
       justify-content: space-between;
+
+      select {
+        margin-top: 8px;
+      }
     }
   }
 
@@ -85,6 +92,11 @@ export default Vue.extend({
 
       label{
         margin-top: 0;
+        width: 320px;
+
+        select {
+          margin-top: 0px;
+        }
       }
     }
   }

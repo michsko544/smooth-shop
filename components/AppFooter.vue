@@ -66,8 +66,8 @@
           <small>&copy; 2021</small>
           <small>Site by Majk</small>
         </div>
-        <div>
-          Social Icons
+        <div class="socials">
+          <SocialMedia />
         </div>
       </div>
     </div>
@@ -78,10 +78,12 @@ import Vue from 'vue'
 import routes from '../constants/routes'
 import Logo from '../assets/logo.png'
 import Newsletter from './Newsletter.vue'
+import SocialMedia from './SocialMedia.vue'
 export default Vue.extend({
   name: 'AppFooter',
   components: {
-    Newsletter
+    Newsletter,
+    SocialMedia
   },
   data () {
     return {
@@ -130,6 +132,10 @@ export default Vue.extend({
         margin-bottom: 4px;
       }
     }
+
+    .socials{
+      margin-top: 24px;
+    }
   }
 
   @media(min-width: $mobile){
@@ -146,8 +152,12 @@ export default Vue.extend({
       .footer-bottom-inner{
         display: flex;
         justify-content: space-between;
-        padding-top: 48px;
-        padding-bottom: 48px;
+        padding-top: 32px;
+        padding-bottom: 32px;
+      }
+
+      .socials{
+        margin-top: 0;
       }
     }
   }
