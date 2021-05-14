@@ -26,6 +26,7 @@ export default Vue.extend({
     padding: 4px;
     grid-template-columns: 1fr;
     row-gap: 8px;
+    width: 100%;
   }
 
   @media(min-width: $mobile){

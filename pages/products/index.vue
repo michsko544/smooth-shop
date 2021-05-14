@@ -2,15 +2,17 @@
   <section>
     <PageTitle title="Shop" />
     <div class="main-content">
-      <div class="top-of-grid">
-        <Breadcrumbs :links="breadcrumbLinks" />
-        <label for="sort">
-          Sort by:
-          <Select :options="sortOptions" :selected-value="filters.sort" :handle-change="({target})=>changeSort(target.value)" name="sort" />
-        </label>
+      <div class="position-wrapper">
+        <div class="top-of-grid">
+          <Breadcrumbs :links="breadcrumbLinks" />
+          <label for="sort">
+            Sort by:
+            <Select :options="sortOptions" :selected-value="filters.sort" :handle-change="({target})=>changeSort(target.value)" name="sort" />
+          </label>
+        </div>
+        <Filters :filters="[{title: 'Fruits', options: ['Raspberries', 'Bananas', 'Apples']}, {title: 'Collections', options: ['Mini cakes', 'Cakes', 'Muffins', 'Donuts']}, {title: 'Other', options: ['Vege', 'Spicy', 'Extremely Sweet']}]" />
+        <ProductsGrid />
       </div>
-      <Filters :filters="[{title: 'Fruits', options: ['raspberries', 'bananas', 'apples']}, {title: 'Collections', options: ['Mini cakes', 'Cakes', 'Muffins', 'Donuts']}, {title: 'Other', options: ['Vege', 'Spicy', 'Extremely Sweet']}]" />
-      <ProductsGrid />
     </div>
   </section>
 </template>
@@ -65,9 +67,10 @@ export default Vue.extend({
 
   .top-of-grid{
     padding: 24px;
+    padding-bottom: 16px;
 
     label {
-      margin-top: 24px;
+      margin-top: 48px;
       display: flex;
       align-items: center;
       white-space: nowrap;
@@ -83,6 +86,25 @@ export default Vue.extend({
   @media(min-width: $mobile){
     .main-content{
       margin: 24px auto 64px;
+    }
+
+    .position-wrapper{
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      grid-template-rows: 93px auto;
+
+      &>*:nth-child(1){
+        grid-column: 2/-1;
+      }
+
+      &>*:nth-child(2){
+        grid-column: 1/2;
+        grid-row: 1/-1;
+      }
+
+      &>*:nth-child(3){
+        grid-column: 2/-1;
+      }
     }
 
     .top-of-grid{

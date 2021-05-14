@@ -354,11 +354,12 @@ export default Vue.extend({
     }
 
     .navInner{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      height: 100%;
+      overflow-y: hidden;
     }
 
     .dropdown{

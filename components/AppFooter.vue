@@ -64,7 +64,7 @@
       <div class="contentContainer footer-bottom-inner">
         <div>
           <small>&copy; 2021</small>
-          <small>Site by Majk</small>
+          <small>Site by Majkel</small>
         </div>
         <div class="socials">
           <SocialMedia />
