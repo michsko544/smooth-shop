@@ -10,12 +10,16 @@
         {{ description }}
       </p>
       <div class="buttons">
-        <button class="btn white-btn" @click="button1Handler">
-          {{ button1Text }}
-        </button>
-        <button class="btn black-btn" @click="button2Handler">
-          {{ button2Text }}
-        </button>
+        <NuxtLink :to="routes.ABOUT_URL">
+          <button class="btn white-btn" @click="button1Handler">
+            {{ button1Text }}
+          </button>
+        </NuxtLink>
+        <NuxtLink :to="routes.SHOP_URL">
+          <button class="btn black-btn" @click="button2Handler">
+            {{ button2Text }}
+          </button>
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -23,6 +27,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import routes from '../../constants/routes'
 
 export default Vue.extend({
   name: 'HeroProduct',
@@ -60,8 +65,12 @@ export default Vue.extend({
       type: String,
       default: 'https://images.unsplash.com/photo-1616031036658-1f2d8258eca8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1342&q=80'
     }
+  },
+  data () {
+    return {
+      routes
+    }
   }
-
 })
 </script>
 
@@ -101,6 +110,7 @@ export default Vue.extend({
         gap: 24px;
 
         &>*{
+          flex-basis: 50%;
           margin-bottom: 12px;
         }
       }

@@ -1,18 +1,24 @@
 <template>
   <div class="collections-grid">
-    <CollectionCard title="Donuts" image="https://images.unsplash.com/photo-1506224772180-d75b3efbe9be?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" />
-    <CollectionCard title="Cakes" />
-    <CollectionCard title="Mini cakes" image="https://images.unsplash.com/photo-1514056052883-d017fddd0426?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=648&q=80" />
-    <CollectionCard title="Muffins" image="https://images.unsplash.com/photo-1596726648434-e6d14dd3f21d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80" />
+    <CollectionCard title="Donuts" image="https://images.unsplash.com/photo-1506224772180-d75b3efbe9be?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" :link="routes.COLLECTIONS_URL + '/donuts'" />
+    <CollectionCard title="Cakes" :link="routes.COLLECTIONS_URL + '/cakes'" />
+    <CollectionCard title="Mini cakes" image="https://images.unsplash.com/photo-1514056052883-d017fddd0426?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=648&q=80" :link="routes.COLLECTIONS_URL + '/mini-cakes'" />
+    <CollectionCard title="Muffins" image="https://images.unsplash.com/photo-1596726648434-e6d14dd3f21d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80" :link="routes.COLLECTIONS_URL + '/muffins'" />
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import CollectionCard from '../CollectionCard.vue'
+import * as routes from '../constants/routes'
+import CollectionCard from './CollectionCard.vue'
 export default Vue.extend({
   name: 'Collections',
   components: {
     CollectionCard
+  },
+  data () {
+    return {
+      routes
+    }
   }
 })
 </script>

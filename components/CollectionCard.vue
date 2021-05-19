@@ -1,15 +1,17 @@
 <template>
   <div class="container">
-    <img :src="image" :alt="imageAlt">
-    <div class="card-inner">
-      <h3>{{ title }}</h3>
-      <p v-if="text">
-        {{ text }}
-      </p>
-      <button class="btn white-btn">
-        Shop now
-      </button>
-    </div>
+    <NuxtLink :to="link">
+      <img :src="image" :alt="imageAlt">
+      <div class="card-inner">
+        <h3>{{ title }}</h3>
+        <p v-if="text">
+          {{ text }}
+        </p>
+        <button class="btn white-btn">
+          Shop now
+        </button>
+      </div>
+    </NuxtLink>
   </div>
 </template>
 <script lang="ts">
@@ -27,6 +29,11 @@ export default Vue.extend({
       default: 'Lorem ipsum',
       required: false
     },
+    link: {
+      type: String,
+      default: '#',
+      required: true
+    },
     imageAlt: {
       type: String,
       default: 'cake',
@@ -35,7 +42,7 @@ export default Vue.extend({
     image: {
       type: String,
       default: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1280&q=80',
-      required: true
+      required: false
     }
   }
 })

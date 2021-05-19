@@ -32,6 +32,7 @@ export default Vue.extend({
       a{
         opacity: 0.6;
         transition: 0.1s opacity ease-in;
+        text-transform: capitalize;
 
         &:hover{
           opacity: 1;
@@ -43,6 +44,7 @@ export default Vue.extend({
       }
 
       &:last-child {
+        text-transform: capitalize;
 
         &::after{
           content: "";

@@ -18,12 +18,12 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import routes from '../../constants/routes'
-import ProductsGrid from '../../components/Products/ProductsGrid.vue'
-import Filters from '../../components/Products/Filters.vue'
-import PageTitle from '../../components/PageTitle.vue'
-import Breadcrumbs from '../../components/Breadcrumbs.vue'
-import Select from '../../components/Select.vue'
+import routes from '../../../constants/routes'
+import ProductsGrid from '../../../components/Products/ProductsGrid.vue'
+import Filters from '../../../components/Products/Filters.vue'
+import PageTitle from '../../../components/PageTitle.vue'
+import Breadcrumbs from '../../../components/Breadcrumbs.vue'
+import Select from '../../../components/Select.vue'
 export default Vue.extend({
   components: {
     ProductsGrid,
@@ -38,7 +38,7 @@ export default Vue.extend({
       breadcrumbLinks: [
         { text: 'Home', url: routes.HOME_URL },
         { text: 'Collections', url: routes.COLLECTIONS_URL },
-        { text: 'All', url: routes.SHOP_URL }
+        { text: this.$route.params.collection, url: routes.SHOP_URL + this.$route.params.collection }
       ],
       sortOptions: [
         'Ascending',
@@ -46,7 +46,7 @@ export default Vue.extend({
       ],
       filters: {
         sort: 'Ascending',
-        collection: 'All'
+        collection: this.$route.params.collection
       }
     }
   },

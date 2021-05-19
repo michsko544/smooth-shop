@@ -61,6 +61,12 @@ export default Vue.extend({
     }
 
     a{
+      display:block;
+    }
+  }
+
+  @media(min-width:$mobile) {
+    .container a{
       width: fit-content;
     }
   }

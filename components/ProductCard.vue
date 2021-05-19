@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="routes.SHOP_URL + '/' + id ">
+  <NuxtLink :to="routes.PRODUCT_URL + '/' + id ">
     <div
       :style="{
         backgroundImage: `url(${image})`,
@@ -24,7 +24,7 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import routes from '../constants/routes'
+import * as routes from '../constants/routes'
 import SaleIcon from '../assets/sale.svg'
 import SoldIcon from '../assets/sold-out.svg'
 export default Vue.extend({
@@ -62,7 +62,7 @@ export default Vue.extend({
     image: {
       type: String,
       default: 'https://images.pexels.com/photos/1055271/pexels-photo-1055271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-      required: true
+      required: false
     }
   },
   data () {
