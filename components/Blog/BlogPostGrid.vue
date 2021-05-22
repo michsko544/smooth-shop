@@ -102,9 +102,9 @@ export default Vue.extend({
           padding-left:4px;
 
           .tags{
-            padding: 0 24px;
+            padding: 0 24px !important;
             top: 24px;
-            bottom:unset;
+            bottom: unset !important;
           }
         }
 

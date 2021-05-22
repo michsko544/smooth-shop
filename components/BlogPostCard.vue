@@ -81,8 +81,9 @@ export default Vue.extend({
         object-fit: cover;
         position: absolute;
       }
+    }
 
-      .tags{
+    .tags{
         position: absolute;
         bottom: 0;
         left: 0;
@@ -99,7 +100,6 @@ export default Vue.extend({
           text-transform: uppercase;
         }
       }
-    }
 
     .text-wrapper{
       padding: 8px;
